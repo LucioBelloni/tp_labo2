@@ -46,5 +46,19 @@ namespace Primer
         {
 
         }
+
+        private void btn_Click(object sender, EventArgs e)
+        {
+            Login lg = new Login();
+            lg.MdiParent = this;
+            lg.Show();
+        }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            Register rg = new Register();
+            rg.MdiParent = this;
+            rg.Show();
+        }
     }
 }

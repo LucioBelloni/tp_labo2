@@ -31,7 +31,7 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             panel1 = new Panel();
-            btn = new Button();
+            btnLogin = new Button();
             btnRegistrar = new Button();
             pictureBox1 = new PictureBox();
             menuStrip4 = new MenuStrip();
@@ -41,13 +41,13 @@
             spotToolStripMenuItem = new ToolStripMenuItem();
             margenToolStripMenuItem = new ToolStripMenuItem();
             p2PToolStripMenuItem = new ToolStripMenuItem();
+            botsDeTradingToolStripMenuItem1 = new ToolStripMenuItem();
+            aPIToolStripMenuItem1 = new ToolStripMenuItem();
+            blockTradingToolStripMenuItem1 = new ToolStripMenuItem();
             imageList1 = new ImageList(components);
             menuStrip1 = new MenuStrip();
             menuStrip2 = new MenuStrip();
             menuStrip3 = new MenuStrip();
-            botsDeTradingToolStripMenuItem1 = new ToolStripMenuItem();
-            aPIToolStripMenuItem1 = new ToolStripMenuItem();
-            blockTradingToolStripMenuItem1 = new ToolStripMenuItem();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             menuStrip4.SuspendLayout();
@@ -56,32 +56,33 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.ScrollBar;
-            panel1.Controls.Add(btn);
+            panel1.Controls.Add(btnLogin);
             panel1.Controls.Add(btnRegistrar);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(menuStrip4);
             panel1.Location = new Point(1, -3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1091, 75);
+            panel1.Size = new Size(1170, 75);
             panel1.TabIndex = 12;
             panel1.Paint += panel1_Paint;
             // 
-            // btn
+            // btnLogin
             // 
-            btn.BackColor = Color.Transparent;
-            btn.FlatAppearance.BorderColor = Color.Red;
-            btn.FlatAppearance.BorderSize = 0;
-            btn.FlatAppearance.MouseDownBackColor = Color.Red;
-            btn.FlatAppearance.MouseOverBackColor = Color.Red;
-            btn.FlatStyle = FlatStyle.Flat;
-            btn.Font = new Font("Yu Gothic", 11.25F, FontStyle.Italic, GraphicsUnit.Point);
-            btn.ForeColor = SystemColors.ActiveCaptionText;
-            btn.Location = new Point(840, 15);
-            btn.Name = "btn";
-            btn.Size = new Size(135, 36);
-            btn.TabIndex = 20;
-            btn.Text = "Iniciar sesión";
-            btn.UseVisualStyleBackColor = false;
+            btnLogin.BackColor = Color.Transparent;
+            btnLogin.FlatAppearance.BorderColor = Color.Red;
+            btnLogin.FlatAppearance.BorderSize = 0;
+            btnLogin.FlatAppearance.MouseDownBackColor = Color.Red;
+            btnLogin.FlatAppearance.MouseOverBackColor = Color.Red;
+            btnLogin.FlatStyle = FlatStyle.Flat;
+            btnLogin.Font = new Font("Yu Gothic", 11.25F, FontStyle.Italic, GraphicsUnit.Point);
+            btnLogin.ForeColor = SystemColors.ActiveCaptionText;
+            btnLogin.Location = new Point(920, 15);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(135, 36);
+            btnLogin.TabIndex = 20;
+            btnLogin.Text = "Iniciar sesión";
+            btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btn_Click;
             // 
             // btnRegistrar
             // 
@@ -93,12 +94,13 @@
             btnRegistrar.FlatStyle = FlatStyle.Flat;
             btnRegistrar.Font = new Font("Yu Gothic", 11.25F, FontStyle.Italic, GraphicsUnit.Point);
             btnRegistrar.ForeColor = SystemColors.ActiveCaptionText;
-            btnRegistrar.Location = new Point(981, 15);
+            btnRegistrar.Location = new Point(1061, 15);
             btnRegistrar.Name = "btnRegistrar";
             btnRegistrar.Size = new Size(97, 36);
             btnRegistrar.TabIndex = 19;
             btnRegistrar.Text = "Registrarse";
             btnRegistrar.UseVisualStyleBackColor = false;
+            btnRegistrar.Click += btnRegistrar_Click;
             // 
             // pictureBox1
             // 
@@ -151,44 +153,14 @@
             // margenToolStripMenuItem
             // 
             margenToolStripMenuItem.Name = "margenToolStripMenuItem";
-            margenToolStripMenuItem.Size = new Size(180, 26);
+            margenToolStripMenuItem.Size = new Size(194, 26);
             margenToolStripMenuItem.Text = "Margen";
             // 
             // p2PToolStripMenuItem
             // 
             p2PToolStripMenuItem.Name = "p2PToolStripMenuItem";
-            p2PToolStripMenuItem.Size = new Size(180, 26);
+            p2PToolStripMenuItem.Size = new Size(194, 26);
             p2PToolStripMenuItem.Text = "P2P";
-            // 
-            // imageList1
-            // 
-            imageList1.ColorDepth = ColorDepth.Depth8Bit;
-            imageList1.ImageSize = new Size(16, 16);
-            imageList1.TransparentColor = Color.Transparent;
-            // 
-            // menuStrip1
-            // 
-            menuStrip1.Location = new Point(0, 48);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1086, 24);
-            menuStrip1.TabIndex = 13;
-            menuStrip1.Text = "menuStrip1";
-            // 
-            // menuStrip2
-            // 
-            menuStrip2.Location = new Point(0, 24);
-            menuStrip2.Name = "menuStrip2";
-            menuStrip2.Size = new Size(1086, 24);
-            menuStrip2.TabIndex = 14;
-            menuStrip2.Text = "menuStrip2";
-            // 
-            // menuStrip3
-            // 
-            menuStrip3.Location = new Point(0, 0);
-            menuStrip3.Name = "menuStrip3";
-            menuStrip3.Size = new Size(1086, 24);
-            menuStrip3.TabIndex = 15;
-            menuStrip3.Text = "menuStrip3";
             // 
             // botsDeTradingToolStripMenuItem1
             // 
@@ -208,15 +180,46 @@
             blockTradingToolStripMenuItem1.Size = new Size(194, 26);
             blockTradingToolStripMenuItem1.Text = "Block Trading";
             // 
+            // imageList1
+            // 
+            imageList1.ColorDepth = ColorDepth.Depth8Bit;
+            imageList1.ImageSize = new Size(16, 16);
+            imageList1.TransparentColor = Color.Transparent;
+            // 
+            // menuStrip1
+            // 
+            menuStrip1.Location = new Point(0, 48);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(1171, 24);
+            menuStrip1.TabIndex = 13;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // menuStrip2
+            // 
+            menuStrip2.Location = new Point(0, 24);
+            menuStrip2.Name = "menuStrip2";
+            menuStrip2.Size = new Size(1171, 24);
+            menuStrip2.TabIndex = 14;
+            menuStrip2.Text = "menuStrip2";
+            // 
+            // menuStrip3
+            // 
+            menuStrip3.Location = new Point(0, 0);
+            menuStrip3.Name = "menuStrip3";
+            menuStrip3.Size = new Size(1171, 24);
+            menuStrip3.TabIndex = 15;
+            menuStrip3.Text = "menuStrip3";
+            // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1086, 699);
+            ClientSize = new Size(1171, 797);
             Controls.Add(panel1);
             Controls.Add(menuStrip1);
             Controls.Add(menuStrip2);
             Controls.Add(menuStrip3);
+            IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
             Name = "Main";
             Text = "asd";
@@ -235,7 +238,7 @@
         private Panel panel1;
         private ImageList imageList1;
         private PictureBox pictureBox1;
-        private Button btn;
+        private Button btnLogin;
         private Button btnRegistrar;
         private MenuStrip menuStrip1;
         private MenuStrip menuStrip2;

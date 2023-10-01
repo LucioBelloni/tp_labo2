@@ -129,6 +129,8 @@
             txtContraseña.Text = "Ingrese su contraseña";
             txtContraseña.TextAlign = HorizontalAlignment.Center;
             txtContraseña.TextChanged += txtContraseña_TextChanged;
+            txtContraseña.Enter += txtContraseña_Enter;
+            txtContraseña.Leave += txtContraseña_Leave;
             // 
             // txtUsuario
             // 
@@ -140,6 +142,8 @@
             txtUsuario.Text = "Ingrese su usuario";
             txtUsuario.TextAlign = HorizontalAlignment.Center;
             txtUsuario.TextChanged += txtUsuario_TextChanged;
+            txtUsuario.Enter += txtUsuario_Enter;
+            txtUsuario.Leave += txtUsuario_Leave;
             // 
             // pictureBox1
             // 
@@ -203,6 +207,7 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Login";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form2";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);

@@ -81,6 +81,7 @@
             btn_cerrar.Size = new Size(36, 35);
             btn_cerrar.TabIndex = 0;
             btn_cerrar.UseVisualStyleBackColor = true;
+            btn_cerrar.Click += btn_cerrar_Click;
             // 
             // pictureBox1
             // 
@@ -88,7 +89,7 @@
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(66, 60);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(303, 175);
+            pictureBox1.Size = new Size(302, 154);
             pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox1.TabIndex = 13;
             pictureBox1.TabStop = false;
@@ -114,6 +115,8 @@
             txtNombre.Text = "Ingrese su nombre";
             txtNombre.TextAlign = HorizontalAlignment.Center;
             txtNombre.TextChanged += txtNombre_TextChanged;
+            txtNombre.Enter += txtNombre_Enter;
+            txtNombre.Leave += txtNombre_Leave;
             // 
             // label4
             // 
@@ -135,6 +138,8 @@
             txtUsuario.Text = "Ingrese su usuario";
             txtUsuario.TextAlign = HorizontalAlignment.Center;
             txtUsuario.TextChanged += txtUsuario_TextChanged;
+            txtUsuario.Enter += txtUsuario_Enter;
+            txtUsuario.Leave += txtUsuario_Leave;
             // 
             // label1
             // 
@@ -156,6 +161,8 @@
             txtMail.Text = "minombre@ejemplo.com";
             txtMail.TextAlign = HorizontalAlignment.Center;
             txtMail.TextChanged += txtMail_TextChanged;
+            txtMail.Enter += txtMail_Enter;
+            txtMail.Leave += txtMail_Leave;
             // 
             // label2
             // 
@@ -177,6 +184,8 @@
             txtContraseña.Text = "Ingrese una contraseña";
             txtContraseña.TextAlign = HorizontalAlignment.Center;
             txtContraseña.TextChanged += txtContraseña_TextChanged;
+            txtContraseña.Enter += txtContraseña_Enter;
+            txtContraseña.Leave += txtContraseña_Leave;
             // 
             // btnCrearCuenta
             // 
@@ -213,7 +222,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Menu;
-            ClientSize = new Size(460, 703);
+            ClientSize = new Size(459, 682);
             Controls.Add(btnLogin);
             Controls.Add(btnCrearCuenta);
             Controls.Add(txtContraseña);
@@ -228,6 +237,7 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Register";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Register";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
