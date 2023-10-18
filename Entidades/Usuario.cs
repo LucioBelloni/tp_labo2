@@ -22,8 +22,6 @@ namespace Entidades
         }
         
 
-
-
         public string Clave { get => clave; set => clave = value; }
         public string Correo { get => correo; set => correo = value; }
         public string Perfil { get => perfil; set => perfil = value; }

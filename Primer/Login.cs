@@ -51,7 +51,7 @@ namespace Main
 
             if(register.DialogResult == DialogResult.OK)
             {
-                // serializar json  porno
+                // serializar json
             }
 
         }
