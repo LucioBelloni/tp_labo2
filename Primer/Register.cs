@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,8 +11,10 @@ using System.Windows.Forms;
 
 namespace Main
 {
+
     public partial class Register : Form
     {
+
         public Register()
         {
             InitializeComponent();
@@ -44,19 +47,21 @@ namespace Main
 
         private void btnCrearCuenta_Click(object sender, EventArgs e)
         {
+            List<Usuario> listaUsuarios = new List<Usuario>();
+            string correo = this.txtMail.Text;
+            string clave = this.txtContraseña.Text;
+            string nombre = this.txtNombre.Text;
+            string apellido = this.txtApellido.Text;
+
+            listaUsuarios = Archivos.DeserealizarUsuarios();
+
+            Usuario usuario = new Usuario(clave, correo, nombre, apellido);
+            listaUsuarios.Add(usuario);
+            Archivos.SerealizarUsuarios(listaUsuarios);
+            this.Close();
 
         }
 
-
-
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-            Login login = new Login();
-            login.Show();
-            this.Hide();
-
-
-        }
 
         private void label3_Click(object sender, EventArgs e)
         {
@@ -107,19 +112,19 @@ namespace Main
 
         private void txtUsuario_Leave(object sender, EventArgs e)
         {
-            if (txtUsuario.Text == "")
+            if (txtApellido.Text == "")
             {
-                txtUsuario.Text = "Ingrese su usuario";
-                txtUsuario.ForeColor = Color.Black;
+                txtApellido.Text = "Ingrese su usuario";
+                txtApellido.ForeColor = Color.Black;
             }
         }
 
         private void txtUsuario_Enter(object sender, EventArgs e)
         {
-            if (txtUsuario.Text == "Ingrese su usuario")
+            if (txtApellido.Text == "Ingrese su usuario")
             {
-                txtUsuario.Text = "";
-                txtUsuario.ForeColor = Color.Black;
+                txtApellido.Text = "";
+                txtApellido.ForeColor = Color.Black;
             }
         }
 
@@ -141,6 +146,11 @@ namespace Main
                 txtContraseña.ForeColor = Color.Black;
                 txtContraseña.UseSystemPasswordChar = true;
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

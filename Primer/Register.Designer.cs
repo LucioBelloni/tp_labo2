@@ -35,14 +35,13 @@
             pictureBox1 = new PictureBox();
             label3 = new Label();
             txtNombre = new TextBox();
-            label4 = new Label();
-            txtUsuario = new TextBox();
             label1 = new Label();
             txtMail = new TextBox();
             label2 = new Label();
             txtContraseña = new TextBox();
             btnCrearCuenta = new Button();
-            btnLogin = new Button();
+            lblApellido = new Label();
+            txtApellido = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -118,34 +117,11 @@
             txtNombre.Enter += txtNombre_Enter;
             txtNombre.Leave += txtNombre_Leave;
             // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Yu Gothic", 9F, FontStyle.Italic, GraphicsUnit.Point);
-            label4.Location = new Point(88, 384);
-            label4.Name = "label4";
-            label4.Size = new Size(50, 16);
-            label4.TabIndex = 22;
-            label4.Text = "Usuario";
-            // 
-            // txtUsuario
-            // 
-            txtUsuario.Font = new Font("Yu Gothic", 9.75F, FontStyle.Italic, GraphicsUnit.Point);
-            txtUsuario.Location = new Point(88, 403);
-            txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(245, 28);
-            txtUsuario.TabIndex = 23;
-            txtUsuario.Text = "Ingrese su usuario";
-            txtUsuario.TextAlign = HorizontalAlignment.Center;
-            txtUsuario.TextChanged += txtUsuario_TextChanged;
-            txtUsuario.Enter += txtUsuario_Enter;
-            txtUsuario.Leave += txtUsuario_Leave;
-            // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Yu Gothic", 9F, FontStyle.Italic, GraphicsUnit.Point);
-            label1.Location = new Point(88, 325);
+            label1.Location = new Point(88, 375);
             label1.Name = "label1";
             label1.Size = new Size(31, 16);
             label1.TabIndex = 24;
@@ -154,7 +130,7 @@
             // txtMail
             // 
             txtMail.Font = new Font("Yu Gothic", 9.75F, FontStyle.Italic, GraphicsUnit.Point);
-            txtMail.Location = new Point(88, 344);
+            txtMail.Location = new Point(88, 394);
             txtMail.Name = "txtMail";
             txtMail.Size = new Size(245, 28);
             txtMail.TabIndex = 25;
@@ -168,7 +144,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Yu Gothic", 9F, FontStyle.Italic, GraphicsUnit.Point);
-            label2.Location = new Point(88, 453);
+            label2.Location = new Point(88, 425);
             label2.Name = "label2";
             label2.Size = new Size(71, 16);
             label2.TabIndex = 26;
@@ -177,7 +153,7 @@
             // txtContraseña
             // 
             txtContraseña.Font = new Font("Yu Gothic", 9.75F, FontStyle.Italic, GraphicsUnit.Point);
-            txtContraseña.Location = new Point(88, 472);
+            txtContraseña.Location = new Point(88, 444);
             txtContraseña.Name = "txtContraseña";
             txtContraseña.Size = new Size(245, 28);
             txtContraseña.TabIndex = 27;
@@ -191,7 +167,7 @@
             // 
             btnCrearCuenta.BackColor = Color.Red;
             btnCrearCuenta.Font = new Font("Yu Gothic", 12F, FontStyle.Italic, GraphicsUnit.Point);
-            btnCrearCuenta.Location = new Point(118, 516);
+            btnCrearCuenta.Location = new Point(114, 478);
             btnCrearCuenta.Name = "btnCrearCuenta";
             btnCrearCuenta.Size = new Size(204, 49);
             btnCrearCuenta.TabIndex = 28;
@@ -199,23 +175,28 @@
             btnCrearCuenta.UseVisualStyleBackColor = false;
             btnCrearCuenta.Click += btnCrearCuenta_Click;
             // 
-            // btnLogin
+            // lblApellido
             // 
-            btnLogin.BackColor = Color.WhiteSmoke;
-            btnLogin.FlatAppearance.BorderColor = Color.Red;
-            btnLogin.FlatAppearance.BorderSize = 0;
-            btnLogin.FlatAppearance.MouseDownBackColor = Color.Red;
-            btnLogin.FlatAppearance.MouseOverBackColor = Color.Red;
-            btnLogin.FlatStyle = FlatStyle.Flat;
-            btnLogin.Font = new Font("Yu Gothic", 11.25F, FontStyle.Italic, GraphicsUnit.Point);
-            btnLogin.ForeColor = SystemColors.ActiveCaptionText;
-            btnLogin.Location = new Point(141, 595);
-            btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(148, 40);
-            btnLogin.TabIndex = 30;
-            btnLogin.Text = "Ya tengo cuenta";
-            btnLogin.UseVisualStyleBackColor = false;
-            btnLogin.Click += btnLogin_Click;
+            lblApellido.AutoSize = true;
+            lblApellido.Font = new Font("Yu Gothic", 9F, FontStyle.Italic, GraphicsUnit.Point);
+            lblApellido.Location = new Point(88, 325);
+            lblApellido.Name = "lblApellido";
+            lblApellido.Size = new Size(52, 16);
+            lblApellido.TabIndex = 22;
+            lblApellido.Text = "Apellido";
+            // 
+            // txtApellido
+            // 
+            txtApellido.Font = new Font("Yu Gothic", 9.75F, FontStyle.Italic, GraphicsUnit.Point);
+            txtApellido.Location = new Point(88, 344);
+            txtApellido.Name = "txtApellido";
+            txtApellido.Size = new Size(245, 28);
+            txtApellido.TabIndex = 23;
+            txtApellido.Text = "Ingrese su apellido";
+            txtApellido.TextAlign = HorizontalAlignment.Center;
+            txtApellido.TextChanged += txtUsuario_TextChanged;
+            txtApellido.Enter += txtUsuario_Enter;
+            txtApellido.Leave += txtUsuario_Leave;
             // 
             // Register
             // 
@@ -223,14 +204,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Menu;
             ClientSize = new Size(459, 682);
-            Controls.Add(btnLogin);
             Controls.Add(btnCrearCuenta);
             Controls.Add(txtContraseña);
             Controls.Add(label2);
             Controls.Add(txtMail);
             Controls.Add(label1);
-            Controls.Add(txtUsuario);
-            Controls.Add(label4);
+            Controls.Add(txtApellido);
+            Controls.Add(lblApellido);
             Controls.Add(txtNombre);
             Controls.Add(label3);
             Controls.Add(pictureBox1);
@@ -254,14 +234,13 @@
         private PictureBox pictureBox1;
         private Label label3;
         private TextBox txtNombre;
-        private Label label4;
-        private TextBox txtUsuario;
         private Label label1;
         private TextBox txtMail;
         private Label label2;
         private TextBox txtContraseña;
         private Button btnCrearCuenta;
         private Label label6;
-        private Button btnLogin;
+        private Label lblApellido;
+        private TextBox txtApellido;
     }
 }

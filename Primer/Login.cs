@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using Entidades;
 
 namespace Main
 {
     public partial class Login : Form
     {
+        private Usuario usuario;
+
+        public Usuario Usuario { get => this.usuario; }
+
         public Login()
         {
             InitializeComponent();
@@ -29,21 +25,34 @@ namespace Main
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            string usaurio = this.txtUsuario.Text;
+            string correo = this.txtUsuario.Text;
             string clave = this.txtContraseña.Text;
 
-            if (usaurio == "pepito" && clave == "123")
-            {
+            Usuario aux = Funcionalidades.Login(correo, clave);
 
+            if (aux != null)
+            {
+                this.usuario = aux;
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
+            else
+            {
+                MessageBox.Show("Error al ingresar. Verifique los datos.");
+            }
+
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             Register register = new Register();
-            register.Show();
-            this.Hide();    
+            register.ShowDialog();
             
+
+            if(register.DialogResult == DialogResult.OK)
+            {
+                // serializar json  porno
+            }
 
         }
 
